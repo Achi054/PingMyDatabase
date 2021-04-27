@@ -1,0 +1,21 @@
+# Logs
+logs
+*.log
+
+# Artifatcs
+artifacts
+nupkg
+
+# Coverage directory used by tools like istanbul
+coverage
+
+# Compiled binary addons (http://nodejs.org/api/addons.html)
+build/Release
+build/Debug
+
+# Console app exculdes
+bin
+obj
+
+# Visual Studio files
+.vs
