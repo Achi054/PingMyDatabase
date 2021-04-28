@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq;
 using MongoDB.Driver;
 
 namespace PingMyDatabase.MongoDb
@@ -14,16 +13,13 @@ namespace PingMyDatabase.MongoDb
             {
                 var client = new MongoClient(options.ConnectionString);
 
-                var databases = client.ListDatabases().ToList().Select(db => db.GetValue("name").AsString);
+                var mongoOptions = options as MongoDbOptions;
+                var collection = client.GetDatabase(mongoOptions.CollectionName);
 
-                if (databases.Any())
-                {
-                    var mongoOptions = options as MongoDbOptions;
-                    if (!string.IsNullOrWhiteSpace(mongoOptions.DatabaseName) && databases.Contains(mongoOptions.DatabaseName))
-                        Console.WriteLine("Ping to successful. You are good to Go!");
-
+                if (collection is null)
                     Console.WriteLine("Ping unsuccessful. Database does not exist!");
-                }
+
+                Console.WriteLine("Ping to successful. You are good to Go!");
             }
             catch (Exception ex)
             {

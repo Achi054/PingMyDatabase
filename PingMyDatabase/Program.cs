@@ -5,7 +5,7 @@ using PingMyDatabase.SqlServer;
 
 namespace DbConnectionTester
 {
-    class Program
+    static class Program
     {
 
         static int Main(string[] args)

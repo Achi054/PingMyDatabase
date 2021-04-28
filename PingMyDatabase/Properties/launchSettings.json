@@ -2,7 +2,7 @@
   "profiles": {
     "DbConnectionTester": {
       "commandName": "Project",
-      "commandLineArgs": "-c \"Data Source=EU50SQVD077\\HEOLSWEUAT;Initial Catalog=uat_aag_es_food_eol;User Id=ES-AREA1\\AAG20_SVC_EOL_ES_FOO;Password=YOMXr6cMWS@aO8r9COZL\""
+      "commandLineArgs": "mongodb -c \"mongodb://rpt_test_user:GDAY8NnF9oAuPaBz@rpt-cluster.bk9ns.mongodb.net/rpt-identity-test-db?retryWrites=true&w=majority\" -n \"rpt-identity-test-db\""
     }
   }
 }

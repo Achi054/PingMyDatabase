@@ -4,13 +4,13 @@ using System.Linq;
 
 namespace PingMyDatabase
 {
-    internal class Client
+    internal static class Client
     {
         static IDictionary<Databases, IExecutor> clients { get; }
 
         static Client()
         {
-            clients = typeof(Client).Assembly.GetExportedTypes()
+            clients = typeof(Client).Assembly.DefinedTypes
                 .Where(x =>
                     x.IsClass &&
                     !x.IsAbstract &&

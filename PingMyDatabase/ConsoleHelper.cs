@@ -14,10 +14,11 @@ namespace PingMyDatabase
             sb.Append(Environment.NewLine);
             sb.AppendJoin(Environment.NewLine, $"Message: {ex.Message}");
             sb.Append(Environment.NewLine);
-            while (ex.InnerException != null)
+            if (ex.InnerException != null)
             {
                 sb.AppendJoin(Environment.NewLine, ex.InnerException.Message);
             }
+            sb.Append(Environment.NewLine);
             sb.AppendJoin(Environment.NewLine, "StackTrace:");
             sb.AppendJoin(Environment.NewLine, ex.StackTrace);
 
